@@ -16,6 +16,10 @@ Following a controversial proposal to increase pollutant emission limits Suncor 
 
 We wrote R scripts that aggregate and analyze basic information about the 395 documents in the Web Drawer (note: 3 of 395 failed to download due to "confidential" status), including summaries of the number of refinery malfunction reports ("UPSET" documents) over time and the number of malfunction reports without an specified root cause (i.e. containing the text "under investigation").
 
+## Software Requirements
+
+The scraper is based in Python 3/Scrapy. Scripts to parse .pdfs -> text are based in R / tabulizer. See `./scrapers/` and `./textanalysis/` for details.
+
 ## Wishlist / How To Contribute
 
 Ideally, the CER Web Drawer would make records/metadata easily downloadable and searchable by the public.
