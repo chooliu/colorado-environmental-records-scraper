@@ -12,21 +12,18 @@ As part of an ongoing project to make public records in Colorado more accessible
 
 ## Motivating Case
 
-Following a controversial proposal to increase pollutant emission limits Suncor Energy USA Inc, local organizations noted poor records available to the public on the CER Web Drawer. We quickly mobilized to download and analyze the many records associated with the AIRS ID #001-0003 (395 documents, 2.85GB).
+Following a controversial proposal by Suncor Energy USA Inc to increase its pollutant emission limits, local organizations noted poor record keeping available to the public on the CER Web Drawer. We quickly mobilized to download and analyze the many records associated with the AIRS ID #001-0003 (395 documents, 2.85GB).
 
-We wrote R scripts that aggregate and analyze basic information about the 395 documents in the Web Drawer (note: 3 of 395 failed to download due to "confidential" status), including summaries of the number of refinery malfunction reports ("UPSET" documents) over time and the number of malfunction reports without an specified root cause (i.e. containing the text "under investigation").
+We also wrote R scripts that aggregate and analyze the documents' metadata and text (note: 3 of 395 failed to download due to "confidential" status), including summaries of the number of refinery malfunction reports ("UPSET" documents) over time and the number of malfunction reports without an specified root cause (i.e. containing the text "under investigation").
 
-## Software Requirements
+## Navigation
 
-The scraper is based in Python 3/Scrapy. Scripts to parse .pdfs -> text are based in R / tabulizer. See `./scrapers/` and `./textanalysis/` for details.
+* `./scrapers/` : download the CER Web Drawer documents and metadata. (requirements: Python 3, scrapy)
+* `./textanalysis/` : scripts to parse and summarize .pdfs (requirements: R, tabulizer, tinyverse)
 
 ## Wishlist / How To Contribute
 
-Ideally, the CER Web Drawer would make records/metadata easily downloadable and searchable by the public.
-
-In the mean time, we welcome contributions of:
-
 * scrapers for new database queries (i.e., scrapers for queries other than AIRS ID)
 * Python analogues scripts for .pdf -> text parsing / summaries
-* in R scripts options to save text into better data structures than nested R data frames
-* R and Python scripts to aggregate CER database metadata on documents (exported as multiple .txt files)
+* in R scripts, save text of tables in .pdfs into better data structures than nested R data frames
+* R and Python scripts to aggregate CER database metadata on documents (currently exported as multiple .txt files)
