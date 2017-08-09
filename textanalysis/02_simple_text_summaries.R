@@ -54,8 +54,13 @@ table_filtered %>%
 # summarize trends by year
 # --------------------------------------------
 
-# table of report_type x year
+# table of report_type x day
+count_by_date <-
+  table %>%
+  group_by(date, report_type) %>%
+  summarize(count = length(report_id))
 
+# table of report_type x year
 count_by_rpttype_year <-
   table %>%
   #filter(., grepl("upset", report_type, ignore.case = T, perl = T)) %>%
